@@ -44,15 +44,33 @@
     var password = $("#password").val()
 
     if (email == "" || nama == "" || password == "") {
-      // Swal.fire({
-      //   title: "Ups!",
-      //   text: "Data wajib diisi!",
-      //   icon: "warning"
-      // });
-
       $("#email").addClass("is-invalid")
       $("#name").addClass("is-invalid")
       $("#password").addClass("is-invalid")
+    } else {
+      $.ajax({
+        url: 'proses-registrasi',
+        type: 'POST',
+        data: {
+          email,
+          name: nama,
+          password,
+          act: 'registrasi',
+
+        },
+        dataType: 'json',
+        success: function(response) {
+          if (response.pesan == 'berhasil') {
+            Swal.fire({
+              title: "Good Job",
+              text: "Register Berhasil, silahkan Login",
+              icon: "success"
+            }).then((x) => {
+              window.location.href = window.location.href
+            });
+          }
+        }
+      })
     }
 
 

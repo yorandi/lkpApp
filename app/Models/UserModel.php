@@ -10,4 +10,23 @@ class UserModel extends Model
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $allowedFields    = ['email', 'name', 'password'];
+
+
+    public function registrasi($data)
+    {
+        // $a = $this->db->table('users');
+        // $sql = $a->insert($data);
+
+        // if ($sql) {
+        //     $response = [
+        //         'pesan' => 'berhasil'
+        //     ];
+        //     # code...
+        // } else {
+        //     $response = [
+        //         'pesan' => 'gagal'
+        //     ];
+        // }
+        // echo json_encode($response);
+    }
 }

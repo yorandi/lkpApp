@@ -8,3 +8,4 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('/forgot-password.html', 'Home::forgotPassword');
 $routes->get('/register.html', 'Home::register');
+$routes->post('/proses-registrasi', 'Home::proses');
